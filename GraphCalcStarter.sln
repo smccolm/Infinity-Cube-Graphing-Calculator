@@ -1,0 +1,33 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556F}") = "GraphCalc.Shared", "src\GraphCalc.Shared\GraphCalc.Shared.csproj", "{65B9B0B0-12DF-47D2-A465-682DD499A101}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556F}") = "GraphCalc.Api", "src\GraphCalc.Api\GraphCalc.Api.csproj", "{42F08ACD-D52E-4DB5-8B7D-F7B406234617}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556F}") = "GraphCalc.UI", "src\GraphCalc.UI\GraphCalc.UI.csproj", "{AD1AA0C0-A6A2-4272-9D12-39BA82F18D5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65B9B0B0-12DF-47D2-A465-682DD499A101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65B9B0B0-12DF-47D2-A465-682DD499A101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65B9B0B0-12DF-47D2-A465-682DD499A101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65B9B0B0-12DF-47D2-A465-682DD499A101}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42F08ACD-D52E-4DB5-8B7D-F7B406234617}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42F08ACD-D52E-4DB5-8B7D-F7B406234617}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42F08ACD-D52E-4DB5-8B7D-F7B406234617}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42F08ACD-D52E-4DB5-8B7D-F7B406234617}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD1AA0C0-A6A2-4272-9D12-39BA82F18D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD1AA0C0-A6A2-4272-9D12-39BA82F18D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD1AA0C0-A6A2-4272-9D12-39BA82F18D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD1AA0C0-A6A2-4272-9D12-39BA82F18D5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
