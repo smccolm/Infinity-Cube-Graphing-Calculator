@@ -1,0 +1,376 @@
+Infinity Cube Function Test Library
+==================================
+
+Paste these directly into Infinity Cube function rows.
+
+Design note
+-----------
+For the Infinity Cube, this expression is the visible projected radius squared:
+
+atan(x)*atan(x)+atan(y)*atan(y)
+
+Real-space radius:
+x*x + y*y
+
+Projected-radius design often looks better in the Infinity Cube because the app renders:
+thetaX = atan(x)
+thetaY = atan(y)
+thetaZ = atan(z)
+
+
+A. Fun ones we already found
+----------------------------
+
+1. Spacetime ripple relic
+(2.4*exp(-1.8*sqrt(atan(x)*atan(x)+atan(y)*atan(y)))*sin(12*sqrt(atan(x)*atan(x)+atan(y)*atan(y)) + 9*(atan(x)*atan(x)+atan(y)*atan(y))))/(0.03 + sqrt(atan(x)*atan(x)+atan(y)*atan(y)))
+
+2. Calmer spacetime ripple
+(1.8*exp(-1.5*sqrt(atan(x)*atan(x)+atan(y)*atan(y)))*sin(10*sqrt(atan(x)*atan(x)+atan(y)*atan(y)) + 6*(atan(x)*atan(x)+atan(y)*atan(y))))/(0.04 + sqrt(atan(x)*atan(x)+atan(y)*atan(y)))
+
+3. Wilder spacetime ripple
+(3.2*exp(-2.2*sqrt(atan(x)*atan(x)+atan(y)*atan(y)))*sin(14*sqrt(atan(x)*atan(x)+atan(y)*atan(y)) + 12*(atan(x)*atan(x)+atan(y)*atan(y))))/(0.02 + sqrt(atan(x)*atan(x)+atan(y)*atan(y)))
+
+4. Negative spacetime ripple
+-(2.4*exp(-1.8*sqrt(atan(x)*atan(x)+atan(y)*atan(y)))*sin(12*sqrt(atan(x)*atan(x)+atan(y)*atan(y)) + 9*(atan(x)*atan(x)+atan(y)*atan(y))))/(0.03 + sqrt(atan(x)*atan(x)+atan(y)*atan(y)))
+
+5. Cosmic horn / expansion funnel
+-(1/(0.000000001 + 0.35*sqrt(atan(x)*atan(x)+atan(y)*atan(y)) + 4*(atan(x)*atan(x)+atan(y)*atan(y)) + 180*(atan(x)*atan(x)+atan(y)*atan(y))*(atan(x)*atan(x)+atan(y)*atan(y))))
+
+6. Positive cosmic horn
+1/(0.000000001 + 0.35*sqrt(atan(x)*atan(x)+atan(y)*atan(y)) + 4*(atan(x)*atan(x)+atan(y)*atan(y)) + 180*(atan(x)*atan(x)+atan(y)*atan(y))*(atan(x)*atan(x)+atan(y)*atan(y)))
+
+7. Wider cosmic mouth
+-(1/(0.000000001 + 0.25*sqrt(atan(x)*atan(x)+atan(y)*atan(y)) + 2.5*(atan(x)*atan(x)+atan(y)*atan(y)) + 90*(atan(x)*atan(x)+atan(y)*atan(y))*(atan(x)*atan(x)+atan(y)*atan(y))))
+
+8. Sharper spacetime pinch
+-(1/(0.000000001 + 0.55*sqrt(atan(x)*atan(x)+atan(y)*atan(y)) + 6*(atan(x)*atan(x)+atan(y)*atan(y)) + 220*(atan(x)*atan(x)+atan(y)*atan(y))*(atan(x)*atan(x)+atan(y)*atan(y))))
+
+9. Simple real-space horn
+1/(0.00000001 + sqrt(x*x + y*y))
+
+10. Smooth projected mound
+1/(0.000001 + atan(x)*atan(x)+atan(y)*atan(y))
+
+11. Sharp projected needle
+1/(0.000000001 + 50000000*(atan(x)*atan(x)+atan(y)*atan(y))*(atan(x)*atan(x)+atan(y)*atan(y)))
+
+12. Negative projected needle
+-(1/(0.000000001 + 50000000*(atan(x)*atan(x)+atan(y)*atan(y))*(atan(x)*atan(x)+atan(y)*atan(y))))
+
+
+B. Classic baseline tests
+-------------------------
+
+13. Sine plus cosine
+sin(x)+cos(y)
+
+14. Directional saddle
+0.12*(x*x-y*y)
+
+15. Tangent mixed wave
+tan(x/4)+sin(y/2)
+
+16. Smooth bounded sheet
+atan(x)+atan(y)
+
+17. Product wave
+sin(x*y)
+
+18. Diagonal singularity
+1/(x-y)
+
+19. Soft diagonal singularity
+1/(0.05 + (x-y)*(x-y))
+
+20. Negative soft diagonal trench
+-(1/(0.05 + (x-y)*(x-y)))
+
+
+C. Projected-radius domes, craters, bowls
+-----------------------------------------
+
+21. Projected dome
+1/(0.08 + atan(x)*atan(x)+atan(y)*atan(y))
+
+22. Negative projected crater
+-(1/(0.08 + atan(x)*atan(x)+atan(y)*atan(y)))
+
+23. Wide projected hill
+1/(0.25 + atan(x)*atan(x)+atan(y)*atan(y))
+
+24. Tight projected hill
+1/(0.015 + atan(x)*atan(x)+atan(y)*atan(y))
+
+25. Projected volcano rim
+sin(8*sqrt(atan(x)*atan(x)+atan(y)*atan(y)))/(0.15 + sqrt(atan(x)*atan(x)+atan(y)*atan(y)))
+
+26. Inverted projected volcano
+-(sin(8*sqrt(atan(x)*atan(x)+atan(y)*atan(y)))/(0.15 + sqrt(atan(x)*atan(x)+atan(y)*atan(y))))
+
+27. Smooth plateau
+1/(0.01 + 8*(atan(x)*atan(x)+atan(y)*atan(y))*(atan(x)*atan(x)+atan(y)*atan(y)))
+
+28. Negative smooth plateau
+-(1/(0.01 + 8*(atan(x)*atan(x)+atan(y)*atan(y))*(atan(x)*atan(x)+atan(y)*atan(y))))
+
+29. Bell mound
+exp(-2*(atan(x)*atan(x)+atan(y)*atan(y)))
+
+30. Tall bell mound
+4*exp(-5*(atan(x)*atan(x)+atan(y)*atan(y)))
+
+31. Negative bell pit
+-4*exp(-5*(atan(x)*atan(x)+atan(y)*atan(y)))
+
+
+D. Rings and ripples
+--------------------
+
+32. Simple radial rings
+sin(10*sqrt(atan(x)*atan(x)+atan(y)*atan(y)))
+
+33. Dense radial rings
+sin(22*sqrt(atan(x)*atan(x)+atan(y)*atan(y)))
+
+34. Fading radial rings
+exp(-1.2*sqrt(atan(x)*atan(x)+atan(y)*atan(y)))*sin(18*sqrt(atan(x)*atan(x)+atan(y)*atan(y)))
+
+35. Ripple bowl
+sin(12*sqrt(atan(x)*atan(x)+atan(y)*atan(y)))/(0.2 + sqrt(atan(x)*atan(x)+atan(y)*atan(y)))
+
+36. Ripple spike
+sin(18*sqrt(atan(x)*atan(x)+atan(y)*atan(y)))/(0.03 + sqrt(atan(x)*atan(x)+atan(y)*atan(y)))
+
+37. Expanding frequency ripple
+sin(8*sqrt(atan(x)*atan(x)+atan(y)*atan(y)) + 10*(atan(x)*atan(x)+atan(y)*atan(y)))
+
+38. Fading expanding frequency ripple
+exp(-1.6*sqrt(atan(x)*atan(x)+atan(y)*atan(y)))*sin(8*sqrt(atan(x)*atan(x)+atan(y)*atan(y)) + 10*(atan(x)*atan(x)+atan(y)*atan(y)))
+
+39. Ripple with central lift
+1/(0.2 + atan(x)*atan(x)+atan(y)*atan(y)) + 0.5*sin(14*sqrt(atan(x)*atan(x)+atan(y)*atan(y)))
+
+40. Ringed horn
+1/(0.04 + atan(x)*atan(x)+atan(y)*atan(y)) + 0.6*sin(20*sqrt(atan(x)*atan(x)+atan(y)*atan(y)))
+
+
+E. Saddles and directional infinity
+-----------------------------------
+
+41. Projected saddle
+atan(x)*atan(x)-atan(y)*atan(y)
+
+42. Strong projected saddle
+8*(atan(x)*atan(x)-atan(y)*atan(y))
+
+43. Real-space saddle
+0.12*(x*x-y*y)
+
+44. Twisted saddle
+atan(x)*atan(y)
+
+45. Strong twisted saddle
+10*atan(x)*atan(y)
+
+46. Saddle ripple
+sin(8*(atan(x)*atan(x)-atan(y)*atan(y)))
+
+47. Saddle horn
+(atan(x)*atan(x)-atan(y)*atan(y))/(0.05 + atan(x)*atan(x)+atan(y)*atan(y))
+
+48. Four-lobed saddle
+(atan(x)*atan(y))/(0.05 + atan(x)*atan(x)+atan(y)*atan(y))
+
+49. Directional wall
+atan(x)/(0.05 + atan(y)*atan(y))
+
+50. Crossed directional walls
+atan(x)/(0.05 + atan(y)*atan(y)) + atan(y)/(0.05 + atan(x)*atan(x))
+
+
+F. Waves and oscillations
+-------------------------
+
+51. Soft wave sheet
+sin(atan(x)*8)+cos(atan(y)*8)
+
+52. Higher projected wave sheet
+sin(atan(x)*16)+cos(atan(y)*16)
+
+53. Cross wave
+sin(10*atan(x)*atan(y))
+
+54. Dense cross wave
+sin(25*atan(x)*atan(y))
+
+55. Real-space product wave
+sin(x*y)
+
+56. Compressed product wave
+sin(atan(x)*atan(y)*40)
+
+57. Diagonal projected wave
+sin(12*(atan(x)+atan(y)))
+
+58. Opposing diagonal wave
+sin(12*(atan(x)-atan(y)))
+
+59. Crosshatch wave
+sin(12*(atan(x)+atan(y)))+sin(12*(atan(x)-atan(y)))
+
+60. Interference sheet
+sin(8*atan(x))+sin(8*atan(y))+sin(8*(atan(x)+atan(y)))
+
+
+G. Bounded surfaces
+-------------------
+
+61. Bounded ramp
+atan(x)+atan(y)
+
+62. Bounded difference ramp
+atan(x)-atan(y)
+
+63. Bounded radial cap
+atan(1/(0.05 + atan(x)*atan(x)+atan(y)*atan(y)))
+
+64. Bounded saddle
+atan(8*(atan(x)*atan(x)-atan(y)*atan(y)))
+
+65. Bounded cross saddle
+atan(20*atan(x)*atan(y))
+
+66. Bounded ripple
+atan(3*sin(16*sqrt(atan(x)*atan(x)+atan(y)*atan(y))))
+
+67. Bounded singular diagonal
+atan(1/(x-y))
+
+68. Bounded real-space saddle
+atan(0.12*(x*x-y*y))
+
+69. Bounded tangent wave
+atan(tan(x/4)+sin(y/2))
+
+70. Bounded product wave
+atan(sin(x*y))
+
+
+H. Singularities and cracks
+---------------------------
+
+71. Diagonal crack
+1/(x-y)
+
+72. Soft diagonal ridge
+1/(0.01 + (x-y)*(x-y))
+
+73. Negative soft diagonal trench
+-(1/(0.01 + (x-y)*(x-y)))
+
+74. Cross singularity
+1/(0.01 + x*x) + 1/(0.01 + y*y)
+
+75. Negative cross trench
+-(1/(0.01 + x*x) + 1/(0.01 + y*y))
+
+76. Projected cross ridge
+1/(0.01 + atan(x)*atan(x)) + 1/(0.01 + atan(y)*atan(y))
+
+77. Projected cross trench
+-(1/(0.01 + atan(x)*atan(x)) + 1/(0.01 + atan(y)*atan(y)))
+
+78. Ring singularity
+1/(0.001 + (sqrt(atan(x)*atan(x)+atan(y)*atan(y))-0.7)*(sqrt(atan(x)*atan(x)+atan(y)*atan(y))-0.7))
+
+79. Negative ring singularity
+-(1/(0.001 + (sqrt(atan(x)*atan(x)+atan(y)*atan(y))-0.7)*(sqrt(atan(x)*atan(x)+atan(y)*atan(y))-0.7)))
+
+80. Double diagonal crack
+1/(0.05 + (x-y)*(x-y)) - 1/(0.05 + (x+y)*(x+y))
+
+
+I. Horns, funnels, wells
+------------------------
+
+81. Simple positive horn
+1/(0.00000001 + sqrt(x*x + y*y))
+
+82. Simple negative horn
+-(1/(0.00000001 + sqrt(x*x + y*y)))
+
+83. Projected positive horn
+1/(0.000000001 + sqrt(atan(x)*atan(x)+atan(y)*atan(y)))
+
+84. Projected negative horn
+-(1/(0.000000001 + sqrt(atan(x)*atan(x)+atan(y)*atan(y))))
+
+85. Smooth projected funnel
+-(1/(0.000000001 + 0.35*sqrt(atan(x)*atan(x)+atan(y)*atan(y)) + 4*(atan(x)*atan(x)+atan(y)*atan(y)) + 180*(atan(x)*atan(x)+atan(y)*atan(y))*(atan(x)*atan(x)+atan(y)*atan(y))))
+
+86. Smooth projected spike
+1/(0.000000001 + 0.35*sqrt(atan(x)*atan(x)+atan(y)*atan(y)) + 4*(atan(x)*atan(x)+atan(y)*atan(y)) + 180*(atan(x)*atan(x)+atan(y)*atan(y))*(atan(x)*atan(x)+atan(y)*atan(y)))
+
+87. Tall skinny projected spike
+1/(0.000000001 + 0.65*sqrt(atan(x)*atan(x)+atan(y)*atan(y)) + 8*(atan(x)*atan(x)+atan(y)*atan(y)) + 300*(atan(x)*atan(x)+atan(y)*atan(y))*(atan(x)*atan(x)+atan(y)*atan(y)))
+
+88. Wide-mouth funnel
+-(1/(0.000000001 + 0.18*sqrt(atan(x)*atan(x)+atan(y)*atan(y)) + 1.8*(atan(x)*atan(x)+atan(y)*atan(y)) + 60*(atan(x)*atan(x)+atan(y)*atan(y))*(atan(x)*atan(x)+atan(y)*atan(y))))
+
+89. Needle with soft base
+1/(0.000000001 + 200000000*(atan(x)*atan(x)+atan(y)*atan(y))*(atan(x)*atan(x)+atan(y)*atan(y))) + 0.04/(0.08 + atan(x)*atan(x)+atan(y)*atan(y))
+
+90. Negative needle with soft base
+-(1/(0.000000001 + 200000000*(atan(x)*atan(x)+atan(y)*atan(y))*(atan(x)*atan(x)+atan(y)*atan(y))) + 0.04/(0.08 + atan(x)*atan(x)+atan(y)*atan(y)))
+
+
+J. Weird but useful stress tests
+--------------------------------
+
+91. Tangent X wall
+tan(x/3)
+
+92. Tangent Y wall
+tan(y/3)
+
+93. Cross tangent
+tan(x/4)+tan(y/4)
+
+94. Tangent product
+tan(x/5)*tan(y/5)
+
+95. Sine over radius
+sin(1/(0.02 + atan(x)*atan(x)+atan(y)*atan(y)))
+
+96. Wild center oscillation
+sin(1/(0.005 + sqrt(atan(x)*atan(x)+atan(y)*atan(y))))
+
+97. Damped wild center oscillation
+exp(-sqrt(atan(x)*atan(x)+atan(y)*atan(y)))*sin(1/(0.005 + sqrt(atan(x)*atan(x)+atan(y)*atan(y))))
+
+98. Boundary-heavy oscillation
+sin(1/(0.0001 + (1.56-sqrt(atan(x)*atan(x)+atan(y)*atan(y)))*(1.56-sqrt(atan(x)*atan(x)+atan(y)*atan(y)))))
+
+99. Checkerboard projected field
+sin(20*atan(x))*sin(20*atan(y))
+
+100. Soft checkerboard projected field
+atan(4*sin(20*atan(x))*sin(20*atan(y)))
+
+
+K. Good demo lineup
+-------------------
+
+sin(x)+cos(y)
+
+0.12*(x*x-y*y)
+
+tan(x/4)+sin(y/2)
+
+atan(x)+atan(y)
+
+1/(x-y)
+
+(2.4*exp(-1.8*sqrt(atan(x)*atan(x)+atan(y)*atan(y)))*sin(12*sqrt(atan(x)*atan(x)+atan(y)*atan(y)) + 9*(atan(x)*atan(x)+atan(y)*atan(y))))/(0.03 + sqrt(atan(x)*atan(x)+atan(y)*atan(y)))
+
+-(1/(0.000000001 + 0.35*sqrt(atan(x)*atan(x)+atan(y)*atan(y)) + 4*(atan(x)*atan(x)+atan(y)*atan(y)) + 180*(atan(x)*atan(x)+atan(y)*atan(y))*(atan(x)*atan(x)+atan(y)*atan(y))))
